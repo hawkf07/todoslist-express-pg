@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 
+
 function Form(props) {
 
   function handleUserInput(e) {
@@ -14,7 +15,7 @@ function Form(props) {
 
 
   async function postData() {
-    const response = await fetch(`http://localhost:4300/todos/addTodos?name=${props.userInput.name}&description=${props.userInput.description}`, {
+    const response = await fetch(`${props.HOST}:4300/todos/addTodos?name=${props.userInput.name}&description=${props.userInput.description}`, {
       method: "POST"
     })
     const data = await response.json()
